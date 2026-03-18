@@ -21,7 +21,7 @@ const Hero = () => {
               Full Stack Web Developer
             </h2>
             <p className="text-text-primary mb-8 max-w-2xl text-lg">
-              MCA student with hands-on experience in MERN Stack development.
+              MCA student with hands-on experience in Java & MERN Stack development.
               Passionate about building scalable web applications and solving real-world problems.
             </p>
 

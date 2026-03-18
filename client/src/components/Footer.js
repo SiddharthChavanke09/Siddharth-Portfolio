@@ -9,7 +9,7 @@ const Footer = () => {
             © {new Date().getFullYear()} Siddharth Arun Chavanke. All rights reserved.
           </p>
           <p className="text-text-primary/70 text-sm">
-            Full Stack Web Developer | MERN Stack Specialist
+            Full Stack Web Developer | MERN Stack Specialist & Java Developer
           </p>
           <p className="text-text-primary/60 text-xs mt-3">
             Designed with <span className="text-accent">♥</span> and deployed with <span className="text-primary">code</span>
