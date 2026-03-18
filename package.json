@@ -4,7 +4,7 @@
   "private": true,
   "description": "Full Stack Portfolio with MERN Stack",
   "scripts": {
-    "build": "cd client && npm install && npm run build",
+    "build": "cd client && npm ci && npm run build",
     "start": "cd server && node server.js",
     "dev:client": "cd client && npm start",
     "dev:server": "cd server && npm start"
