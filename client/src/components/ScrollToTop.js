@@ -2,63 +2,55 @@ import React, { useState, useEffect } from 'react';
 import { HiArrowUp } from 'react-icons/hi';
 
 const ScrollToTop = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [showButton, setShowButton] = useState(false);
 
-  const toggleVisibility = () => {
-    // Show button when page is scrolled down
-    if (window.pageYOffset > 300) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show button when scrolled down 300px
+      setShowButton(window.scrollY > 300);
+    };
 
-  const scrollToTop = () => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleClick = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
   };
 
-  useEffect(() => {
-    window.addEventListener('scroll', toggleVisibility);
-    return () => window.removeEventListener('scroll', toggleVisibility);
-  }, []);
+  if (!showButton) {
+    return null;
+  }
 
   return (
-    <>
-      {isVisible && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 w-14 h-14 flex items-center justify-center rounded-full bg-primary text-dark font-bold transition-all duration-300 shadow-lg"
-          style={{
-            boxShadow: '0 0 20px rgba(0, 212, 255, 0.6), 0 0 40px rgba(0, 212, 255, 0.3)',
-            animation: 'bounce 2s infinite'
-          }}
-          aria-label="Scroll to top"
-          onMouseEnter={(e) => {
-            e.currentTarget.style.boxShadow = '0 0 30px rgba(0, 212, 255, 0.9), 0 0 50px rgba(0, 212, 255, 0.5)';
-            e.currentTarget.style.transform = 'scale(1.1)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.boxShadow = '0 0 20px rgba(0, 212, 255, 0.6), 0 0 40px rgba(0, 212, 255, 0.3)';
-            e.currentTarget.style.transform = 'scale(1)';
-          }}
-        >
-          <HiArrowUp size={28} />
-        </button>
-      )}
+    <button
+      onClick={handleClick}
+      className="fixed bottom-8 right-8 z-50 w-16 h-16 flex items-center justify-center rounded-full text-dark font-bold shadow-2xl hover:scale-110 transition-transform duration-300"
+      style={{
+        backgroundColor: '#00d4ff',
+        boxShadow: '0 0 30px rgba(0, 212, 255, 0.8), 0 0 60px rgba(0, 212, 255, 0.4), inset 0 0 30px rgba(0, 212, 255, 0.2)',
+        animation: 'bounceButton 2s ease-in-out infinite'
+      }}
+      title="Scroll to top"
+      aria-label="Scroll to top button"
+    >
+      <HiArrowUp size={32} style={{ color: '#0a0e27' }} />
       <style>{`
-        @keyframes bounce {
+        @keyframes bounceButton {
           0%, 100% {
-            transform: translateY(0);
+            transform: translateY(0px);
           }
           50% {
-            transform: translateY(-10px);
+            transform: translateY(-15px);
           }
         }
       `}</style>
-    </>
+    </button>
   );
 };
 
