@@ -30,23 +30,23 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="bg-white">
+    <section id="education" className="bg-dark-light py-16 md:py-24">
       <div className="section-container">
         <h2 className="section-title">Education</h2>
         <div className="max-w-3xl mx-auto space-y-4">
           {education.map((edu, index) => (
-            <div key={index} className="card">
+            <div key={index} className="card" data-aos="fade-left" data-aos-delay={index * 100}>
               <div className="flex items-start gap-4">
-                <div className="text-primary text-2xl">
+                <div className="text-accent text-2xl neon-glow">
                   <HiAcademicCap />
                 </div>
                 <div className="flex-1">
                   <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
-                    <h3 className="text-xl font-bold text-secondary">{edu.degree}</h3>
-                    <span className="text-primary font-semibold">{edu.score}</span>
+                    <h3 className="text-xl font-bold text-primary">{edu.degree}</h3>
+                    <span className="text-accent font-semibold">{edu.score}</span>
                   </div>
-                  <p className="text-gray-600">{edu.institution}</p>
-                  <p className="text-sm text-gray-500 mt-1">{edu.period}</p>
+                  <p className="text-text-primary">{edu.institution}</p>
+                  <p className="text-sm text-text-primary/70 mt-1">{edu.period}</p>
                 </div>
               </div>
             </div>

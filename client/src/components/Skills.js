@@ -29,18 +29,18 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="bg-white">
+    <section id="skills" className="bg-dark-light py-16 md:py-24">
       <div className="section-container">
         <h2 className="section-title">Technical Skills</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((category, index) => (
-            <div key={index} className="card">
-              <h3 className="text-xl font-bold text-secondary mb-4">{category.category}</h3>
-              <div className="flex flex-wrap gap-2">
+            <div key={index} className="card" data-aos="zoom-in" data-aos-delay={index * 100}>
+              <h3 className="text-xl font-bold text-primary neon-text mb-4">{category.category}</h3>
+              <div className="flex flex-wrap gap-3">
                 {category.skills.map((skill, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1 bg-blue-100 text-primary rounded-full text-sm font-medium"
+                    className="px-4 py-2 border border-primary text-primary rounded-full text-sm font-medium transition-all duration-300 neon-border hover:bg-primary/10"
                   >
                     {skill}
                   </span>

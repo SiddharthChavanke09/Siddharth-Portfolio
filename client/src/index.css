@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://unpkg.com/aos@2.3.4/dist/aos.css');
 
 @tailwind base;
 @tailwind components;
@@ -8,9 +9,10 @@
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
-    @apply bg-gray-50 text-gray-900;
+    @apply bg-dark text-text-primary;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
   }
 }
 
@@ -18,16 +20,112 @@
   .section-container {
     @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
   }
-  
+
   .section-title {
-    @apply text-3xl md:text-4xl font-bold text-secondary mb-12 text-center;
+    @apply text-3xl md:text-4xl font-bold text-primary mb-12 text-center;
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
   }
-  
+
   .card {
-    @apply bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6;
+    @apply bg-dark-light rounded-xl p-6 transition-all duration-300 border border-secondary;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   }
-  
+
+  .card:hover {
+    @apply border-primary;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.3), 0 0 15px rgba(0, 212, 255, 0.2);
+    transform: translateY(-5px);
+  }
+
   .btn-primary {
-    @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity duration-300;
+    @apply bg-primary text-dark px-6 py-3 rounded-lg font-semibold transition-all duration-300 border border-primary;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
   }
+
+  .btn-primary:hover {
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
+    transform: scale(1.05);
+  }
+
+  /* Neon Glow Utilities */
+  .neon-glow {
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+  }
+
+  .neon-glow-hover {
+    transition: all 0.3s ease;
+  }
+
+  .neon-glow-hover:hover {
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.6);
+  }
+
+  .neon-text {
+    color: #00d4ff;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+  }
+
+  .neon-border {
+    border-color: #00d4ff;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3) inset;
+  }
+
+  .neon-border:hover {
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.5) inset;
+  }
+
+  .accent-green {
+    color: #00ff88;
+  }
+
+  .accent-pink {
+    color: #ff006e;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #00d4ff 0%, #00ff88 50%, #ff006e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-morphism {
+    @apply backdrop-blur-sm bg-dark-light/50;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+  }
+
+  .scale-hover {
+    transition: transform 0.3s ease;
+  }
+
+  .scale-hover:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* AOS Animation Customization */
+[data-aos] {
+  opacity: 0;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0e27;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00d4ff;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00ff88;
 }

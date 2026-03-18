@@ -20,22 +20,25 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="bg-gray-50">
+    <section id="experience" className="bg-dark py-16 md:py-24">
       <div className="section-container">
         <h2 className="section-title">Work Experience</h2>
         <div className="max-w-3xl mx-auto">
           {experiences.map((exp, index) => (
-            <div key={index} className="card">
+            <div key={index} className="card" data-aos="fade-up">
               <div className="flex items-start gap-4">
-                <div className="text-primary text-2xl">
+                <div className="text-primary text-2xl neon-glow">
                   <HiBriefcase />
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-secondary">{exp.title}</h3>
-                  <p className="text-primary font-medium mb-2">{exp.company} | {exp.period}</p>
-                  <ul className="list-disc list-inside space-y-2 text-gray-700">
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-primary neon-text">{exp.title}</h3>
+                  <p className="text-accent font-medium mb-4">{exp.company} | {exp.period}</p>
+                  <ul className="space-y-3">
                     {exp.achievements.map((achievement, i) => (
-                      <li key={i}>{achievement}</li>
+                      <li key={i} className="flex gap-3 text-text-primary">
+                        <span className="text-accent flex-shrink-0">▸</span>
+                        <span>{achievement}</span>
+                      </li>
                     ))}
                   </ul>
                 </div>
