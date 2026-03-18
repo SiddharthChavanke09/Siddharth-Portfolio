@@ -4,6 +4,13 @@ import { HiExternalLink, HiCode } from 'react-icons/hi';
 const Projects = () => {
   const projects = [
     {
+      title: "Body Shop Management System",
+      description: "Developed a Java and MySQL-based application to efficiently manage body shop operations, including inventory control, car wash services, and car denting processes. Focused on enhancing customer satisfaction, operational effectiveness, and profitability through advanced management techniques and streamlined processes.",
+      skills: ["Java", "MySQL", "JDBC", "Database Design"],
+      link: "#",
+      github: "https://github.com/SiddharthChavanke09"
+    },
+    {
       title: "Farm Connect",
       description: "Agricultural marketplace with responsive UI and interactive features. Designed MongoDB schemas for users, products, and orders, ensuring seamless frontend-backend integration.",
       skills: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MongoDB"],
