@@ -10,6 +10,8 @@ node_modules/
 /build
 /dist
 .env.production.local
+client/build/
+server/dist/
 
 # Misc
 .DS_Store
@@ -28,6 +30,8 @@ logs
 .eslintcache
 .cache
 .babel-cache
+client/.cache/
+server/.cache/
 
 # IDE
 .vscode
@@ -38,3 +42,8 @@ logs
 
 # OS
 Thumbs.db
+
+# Environment files
+.env
+.env.local
+.env.*.local

@@ -1,0 +1,20 @@
+{
+  "name": "siddharth-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full Stack Portfolio with MERN Stack",
+  "scripts": {
+    "build": "cd client && npm install && npm run build",
+    "start": "cd server && node server.js",
+    "dev:client": "cd client && npm start",
+    "dev:server": "cd server && npm start"
+  },
+  "keywords": [
+    "portfolio",
+    "mern",
+    "react",
+    "nodejs"
+  ],
+  "author": "Siddharth Arun Chavanke",
+  "license": "MIT"
+}
